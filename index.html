@@ -48,32 +48,16 @@ nav a {
     color: #aaa;
 }
 
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #22c55e;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-}
-
 .section {
     padding: 50px 20px;
     text-align: center;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
 .card {
     background: #111;
     padding: 20px;
-    width: 250px;
+    margin: 10px auto;
+    width: 300px;
     border-radius: 10px;
 }
 
@@ -88,63 +72,69 @@ footer {
 
 <body>
 
-<header>KFO</header>
+<header>KFO - Kala Force Organization</header>
 
 <nav>
 <a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Projects</a>
-<a href="#">Contact</a>
+<a href="#about">About</a>
+<a href="#join">Join</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
-<h1>Kala Force Organization</h1>
-<p>Innovation | Power | Technology</p>
-<button class="btn" onclick="contact()">Join KFO</button>
+<h1>Kala Force Organization (KFO)</h1>
+<p>Student Power | Unity | College Memories</p>
 </div>
 
-<div class="section">
-<h2>Our Projects</h2>
-<div class="cards">
-
-<div class="card">
-<h3>Robotics</h3>
-<p>Advanced robots & automation systems</p>
-</div>
-
-<div class="card">
-<h3>Defense Tech</h3>
-<p>Drone neutralization & security systems</p>
-</div>
-
-<div class="card">
-<h3>AI/ML</h3>
-<p>Smart AI solutions for future</p>
-</div>
-
-</div>
-</div>
-
-<div class="section">
+<!-- ABOUT SECTION -->
+<div class="section" id="about">
 <h2>About KFO</h2>
-<p>KFO is a technology-driven organization focused on innovation in robotics, defense, and AI systems.</p>
+<p>
+KFO (Kala Force Organization) is a student organization where students capture
+the best memories of college life, build unity, and grow together.
+</p>
+
+<div class="card">
+<h3>Founder</h3>
+<p>Pawan Choudhary</p>
 </div>
 
-<div class="section">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-<p>Phone: +91XXXXXXXXXX</p>
+<div class="card">
+<h3>Head</h3>
+<p>Karan Choudhary</p>
+</div>
+
+<div class="card">
+<h3>Secretary</h3>
+<p>Ritesh Tolani</p>
+<p>Naveen Rao</p>
+</div>
+
+</div>
+
+<!-- JOIN SECTION -->
+<div class="section" id="join">
+<h2>How to Join KFO</h2>
+<p>
+You can join Kala Force Organization after clearing a physical examination.
+</p>
+
+<p>
+There is reservation available in KFO for SC, ST, and OBC categories.
+</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+<h2>Contact Us</h2>
+<p>Email: kala2006@gmail.com</p>
+<p>Mobile: 7877320103</p>
+<p>Address: Jodhpur, Rajasthan</p>
 </div>
 
 <footer>
 © 2026 KFO | Kala Force Organization
 </footer>
-
-<script>
-function contact(){
-    alert("Welcome to KFO  Contact us to join!");
-}
-</script>
 
 </body>
 </html>
