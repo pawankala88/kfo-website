@@ -6,126 +6,90 @@
 <title>KFO - Kala Force Organization</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --red:#e1306c;--red-glow:rgba(225,48,108,0.4);
-  --cyan:#00f0ff;--cyan-glow:rgba(0,240,255,0.3);
-  --dark:#050810;--card-bg:rgba(10,15,35,0.85);
-  --text:#e8eaf6;--muted:#8892b0;
-}
+:root{--red:#e1306c;--rg:rgba(225,48,108,0.4);--cyan:#00f0ff;--cg:rgba(0,240,255,0.3);--dark:#050810;--cb:rgba(10,15,35,0.85);--tx:#e8eaf6;--mt:#8892b0;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Rajdhani',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
-.page-wrapper{position:relative;min-height:100vh;}
-canvas#bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
-.content{position:relative;z-index:2;}
-
-/* HEADER */
-header{display:flex;flex-direction:column;align-items:center;padding:30px 20px 18px;border-bottom:1px solid rgba(0,240,255,0.15);background:rgba(5,8,16,0.85);}
-.logo-wrap{position:relative;width:88px;height:88px;margin-bottom:12px;}
-.ring1{position:absolute;inset:0;border-radius:50%;border:2px solid var(--cyan);box-shadow:0 0 16px var(--cyan-glow),inset 0 0 16px var(--cyan-glow);animation:spin 8s linear infinite;}
-.ring2{position:absolute;inset:8px;border-radius:50%;border:1px dashed var(--red);box-shadow:0 0 10px var(--red-glow);animation:spin 5s linear infinite reverse;}
-.logo-core{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,#0d1530,#050810);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:17px;font-weight:900;color:var(--cyan);text-shadow:0 0 14px var(--cyan);}
-@keyframes spin{to{transform:rotate(360deg);}}
-header h2{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
-
-/* NAV */
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:rgba(5,8,16,0.95);border-bottom:1px solid rgba(0,240,255,0.1);}
-nav a{color:var(--muted);text-decoration:none;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;padding:15px 20px;text-transform:uppercase;position:relative;transition:color 0.3s;}
-nav a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--red);box-shadow:0 0 8px var(--red-glow);transition:left 0.3s,right 0.3s;}
-nav a:hover{color:var(--cyan);}
-nav a:hover::after{left:8%;right:8%;}
-
-/* HERO */
-.hero{text-align:center;padding:100px 20px 80px;display:flex;flex-direction:column;align-items:center;}
-.hero-badge{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:5px;color:var(--cyan);text-transform:uppercase;border:1px solid rgba(0,240,255,0.3);padding:6px 18px;border-radius:2px;margin-bottom:28px;animation:pb 3s ease infinite;}
-@keyframes pb{0%,100%{box-shadow:0 0 0 rgba(0,240,255,0);}50%{box-shadow:0 0 18px rgba(0,240,255,0.4);}}
-.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(30px,7vw,68px);font-weight:900;line-height:1.05;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#fff 30%,var(--cyan) 65%,var(--red) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:float 6s ease-in-out infinite;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.hero-sub{margin-top:22px;font-size:18px;letter-spacing:6px;color:var(--muted);text-transform:uppercase;}
-.hero-sub span{color:var(--red);text-shadow:0 0 12px var(--red-glow);}
-.hero-line{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);margin:36px auto 0;animation:pl 3s ease infinite;}
-@keyframes pl{0%,100%{opacity:0.3;}50%{opacity:1;}}
-
-/* CUBE */
-.cube-scene{width:80px;height:80px;perspective:300px;margin:48px auto 0;}
-.cube{width:80px;height:80px;position:relative;transform-style:preserve-3d;animation:sc 12s linear infinite;}
-@keyframes sc{to{transform:rotateX(360deg) rotateY(360deg);}}
-.face{position:absolute;width:80px;height:80px;border:1px solid var(--cyan);background:rgba(0,240,255,0.04);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:10px;color:rgba(0,240,255,0.6);letter-spacing:2px;}
-.face.front{transform:translateZ(40px);}
-.face.back{transform:rotateY(180deg) translateZ(40px);}
-.face.left{transform:rotateY(-90deg) translateZ(40px);}
-.face.right{transform:rotateY(90deg) translateZ(40px);}
-.face.top{transform:rotateX(90deg) translateZ(40px);}
-.face.bottom{transform:rotateX(-90deg) translateZ(40px);}
-
-/* STATS */
-.stats-row{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;padding:44px 20px;border-top:1px solid rgba(0,240,255,0.08);border-bottom:1px solid rgba(0,240,255,0.08);background:rgba(5,8,16,0.5);}
-.stat{text-align:center;}
-.snum{font-family:'Orbitron',sans-serif;font-size:38px;font-weight:900;color:var(--cyan);text-shadow:0 0 20px var(--cyan-glow);display:block;}
-.slbl{font-size:11px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
-
-/* SECTION */
-.section{padding:80px 20px;text-align:center;max-width:1100px;margin:0 auto;}
-.sec-tag{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:5px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:12px;}
-.section h2{font-family:'Orbitron',sans-serif;font-size:clamp(20px,4vw,36px);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
-.sec-line{width:60px;height:2px;background:linear-gradient(90deg,var(--red),var(--cyan));margin:0 auto 40px;}
-
-/* CARDS */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:16px;}
-.card{background:var(--card-bg);border:1px solid rgba(0,240,255,0.14);border-radius:8px;padding:28px 18px;position:relative;overflow:hidden;transition:transform 0.4s,border-color 0.4s,box-shadow 0.4s;transform-style:preserve-3d;}
-.card::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,240,255,0.06),transparent);transition:left 0.6s;}
-.card:hover::before{left:150%;}
-.card:hover{transform:translateY(-6px) rotateX(3deg);border-color:rgba(0,240,255,0.5);box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 20px var(--cyan-glow);}
-.card-icon{width:44px;height:44px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;box-shadow:0 0 14px var(--red-glow);background:rgba(225,48,108,0.08);}
-.card h3{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;}
-.card p{font-size:16px;font-weight:600;line-height:1.6;}
-.role-tag{font-size:11px !important;color:var(--muted) !important;letter-spacing:2px;}
-.cd{position:absolute;width:36px;height:36px;}
-.cd.tl{top:10px;left:10px;border-top:1.5px solid var(--cyan);border-left:1.5px solid var(--cyan);}
-.cd.br{bottom:10px;right:10px;border-bottom:1.5px solid var(--cyan);border-right:1.5px solid var(--cyan);}
-
-/* JOIN */
-.join-box{background:var(--card-bg);border:1px solid rgba(225,48,108,0.22);border-radius:12px;padding:44px 32px;position:relative;overflow:hidden;text-align:left;max-width:680px;margin:0 auto;}
-.join-box::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(225,48,108,0.14),transparent 70%);}
-.join-item{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(0,240,255,0.08);}
-.join-item:last-child{border-bottom:none;}
-.join-num{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:var(--red);text-shadow:0 0 14px var(--red-glow);line-height:1;min-width:42px;}
-.join-item h4{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;}
-.join-item p{font-size:15px;color:var(--muted);}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:30px;}
-.ci{background:var(--card-bg);border:1px solid rgba(0,240,255,0.12);border-radius:8px;padding:22px 16px;transition:border-color 0.3s;}
-.ci:hover{border-color:var(--cyan);}
-.ci-lbl{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:8px;}
-.ci p{font-size:15px;font-weight:600;}
-
-/* BUTTON */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;background:transparent;border:1px solid var(--red);color:var(--red);text-decoration:none;border-radius:4px;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase;position:relative;overflow:hidden;transition:color 0.3s;}
+body{font-family:'Rajdhani',sans-serif;background:var(--dark);color:var(--tx);overflow-x:hidden;}
+.wrap{position:relative;min-height:100vh;}
+#bgc{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+.cnt{position:relative;z-index:2;}
+header{display:flex;flex-direction:column;align-items:center;padding:28px 20px 16px;border-bottom:1px solid rgba(0,240,255,0.15);background:rgba(5,8,16,0.9);}
+.lw{position:relative;width:88px;height:88px;margin-bottom:10px;}
+.r1{position:absolute;inset:0;border-radius:50%;border:2px solid var(--cyan);box-shadow:0 0 16px var(--cg),inset 0 0 16px var(--cg);animation:sp 8s linear infinite;}
+.r2{position:absolute;inset:8px;border-radius:50%;border:1px dashed var(--red);box-shadow:0 0 10px var(--rg);animation:sp 5s linear infinite reverse;}
+.lc{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,#0d1530,#050810);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:16px;font-weight:900;color:var(--cyan);text-shadow:0 0 14px var(--cyan);}
+@keyframes sp{to{transform:rotate(360deg);}}
+header h2{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:rgba(5,8,16,0.97);border-bottom:1px solid rgba(0,240,255,0.1);}
+nav a{color:var(--mt);text-decoration:none;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;padding:14px 18px;text-transform:uppercase;position:relative;transition:color 0.3s;}
+nav a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--red);transition:left 0.3s,right 0.3s;}
+nav a:hover{color:var(--cyan);}nav a:hover::after{left:8%;right:8%;}
+.hero{text-align:center;padding:90px 20px 70px;display:flex;flex-direction:column;align-items:center;}
+.hbdg{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:5px;color:var(--cyan);text-transform:uppercase;border:1px solid rgba(0,240,255,0.3);padding:6px 16px;border-radius:2px;margin-bottom:24px;animation:pb 3s ease infinite;}
+@keyframes pb{0%,100%{box-shadow:0 0 0 rgba(0,240,255,0);}50%{box-shadow:0 0 16px rgba(0,240,255,0.4);}}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(28px,7vw,66px);font-weight:900;line-height:1.05;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#fff 30%,var(--cyan) 65%,var(--red) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fl 6s ease-in-out infinite;}
+@keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.hsub{margin-top:18px;font-size:16px;letter-spacing:5px;color:var(--mt);text-transform:uppercase;}
+.hsub span{color:var(--red);text-shadow:0 0 12px var(--rg);}
+.hln{width:110px;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);margin:30px auto 0;animation:sc 3s ease infinite;}
+@keyframes sc{0%,100%{opacity:0.3;}50%{opacity:1;}}
+.cs{width:78px;height:78px;perspective:280px;margin:44px auto 0;}
+.cb{width:78px;height:78px;position:relative;transform-style:preserve-3d;animation:rc 12s linear infinite;}
+@keyframes rc{to{transform:rotateX(360deg) rotateY(360deg);}}
+.fc{position:absolute;width:78px;height:78px;border:1px solid var(--cyan);background:rgba(0,240,255,0.04);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:9px;color:rgba(0,240,255,0.6);letter-spacing:2px;}
+.fc.fn{transform:translateZ(39px);}.fc.bk{transform:rotateY(180deg) translateZ(39px);}
+.fc.lf{transform:rotateY(-90deg) translateZ(39px);}.fc.rt{transform:rotateY(90deg) translateZ(39px);}
+.fc.tp{transform:rotateX(90deg) translateZ(39px);}.fc.bt{transform:rotateX(-90deg) translateZ(39px);}
+.sr{display:flex;flex-wrap:wrap;justify-content:center;gap:36px;padding:40px 20px;border-top:1px solid rgba(0,240,255,0.08);border-bottom:1px solid rgba(0,240,255,0.08);background:rgba(5,8,16,0.5);}
+.si{text-align:center;}
+.sn{font-family:'Orbitron',sans-serif;font-size:36px;font-weight:900;color:var(--cyan);text-shadow:0 0 20px var(--cg);display:block;}
+.sl{font-size:10px;letter-spacing:3px;color:var(--mt);text-transform:uppercase;}
+.sec{padding:70px 20px;text-align:center;max-width:1100px;margin:0 auto;}
+.stg{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:5px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:10px;}
+.sec h2{font-family:'Orbitron',sans-serif;font-size:clamp(18px,4vw,34px);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.sln{width:55px;height:2px;background:linear-gradient(90deg,var(--red),var(--cyan));margin:0 auto 36px;}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:14px;}
+.cd{background:var(--cb);border:1px solid rgba(0,240,255,0.14);border-radius:8px;padding:26px 16px;position:relative;overflow:hidden;transition:transform 0.4s,border-color 0.4s,box-shadow 0.4s;transform-style:preserve-3d;}
+.cd::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,240,255,0.06),transparent);transition:left 0.6s;}
+.cd:hover::before{left:150%;}
+.cd:hover{transform:translateY(-5px) rotateX(3deg);border-color:rgba(0,240,255,0.5);box-shadow:0 18px 38px rgba(0,0,0,0.5),0 0 18px var(--cg);}
+.ci{width:42px;height:42px;border-radius:50%;border:1px solid var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:19px;box-shadow:0 0 12px var(--rg);background:rgba(225,48,108,0.08);}
+.cd h3{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:8px;}
+.cd p{font-size:15px;font-weight:600;line-height:1.6;}
+.rt{font-size:10px!important;color:var(--mt)!important;letter-spacing:2px;}
+.dc{position:absolute;width:32px;height:32px;}
+.dc.tl{top:9px;left:9px;border-top:1.5px solid var(--cyan);border-left:1.5px solid var(--cyan);}
+.dc.br{bottom:9px;right:9px;border-bottom:1.5px solid var(--cyan);border-right:1.5px solid var(--cyan);}
+.jb{background:var(--cb);border:1px solid rgba(225,48,108,0.22);border-radius:12px;padding:40px 28px;position:relative;overflow:hidden;text-align:left;max-width:660px;margin:0 auto;}
+.jb::before{content:'';position:absolute;top:-50px;right:-50px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(225,48,108,0.13),transparent 70%);}
+.ji{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(0,240,255,0.08);}
+.ji:last-child{border-bottom:none;}
+.jn{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;color:var(--red);text-shadow:0 0 12px var(--rg);line-height:1;min-width:38px;}
+.ji h4{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;color:var(--cyan);margin-bottom:5px;text-transform:uppercase;}
+.ji p{font-size:14px;color:var(--mt);}
+.ctg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:26px;}
+.ct{background:var(--cb);border:1px solid rgba(0,240,255,0.12);border-radius:8px;padding:20px 14px;transition:border-color 0.3s;}
+.ct:hover{border-color:var(--cyan);}
+.ctl{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:3px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:7px;}
+.ct p{font-size:14px;font-weight:600;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:transparent;border:1px solid var(--red);color:var(--red);text-decoration:none;border-radius:4px;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;position:relative;overflow:hidden;transition:color 0.3s;}
 .btn::before{content:'';position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;z-index:-1;}
-.btn:hover{color:#fff;box-shadow:0 0 22px var(--red-glow);}
+.btn:hover{color:#fff;box-shadow:0 0 20px var(--rg);}
 .btn:hover::before{transform:scaleX(1);}
-
-/* FOOTER */
-footer{background:rgba(5,8,16,0.97);border-top:1px solid rgba(0,240,255,0.1);text-align:center;padding:26px 20px;}
-footer p{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+footer{background:rgba(5,8,16,0.97);border-top:1px solid rgba(0,240,255,0.1);text-align:center;padding:24px 20px;}
+footer p{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;}
 footer span{color:var(--red);}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.on{opacity:1;transform:none;}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.rv.on{opacity:1;transform:none;}
 </style>
 </head>
 <body>
-<div class="page-wrapper">
-<canvas id="bg"></canvas>
-<div class="content">
+<div class="wrap">
+<canvas id="bgc"></canvas>
+<div class="cnt">
 
 <header>
-  <div class="logo-wrap">
-    <div class="ring1"></div><div class="ring2"></div>
-    <div class="logo-core">KFO</div>
-  </div>
+  <div class="lw"><div class="r1"></div><div class="r2"></div><div class="lc">KFO</div></div>
   <h2>Kala Force Organization</h2>
 </header>
 
@@ -138,90 +102,86 @@ footer span{color:var(--red);}
 </nav>
 
 <div class="hero" id="hero">
-  <div class="hero-badge">Est. 2024 &nbsp;|&nbsp; Jodhpur, Rajasthan</div>
+  <div class="hbdg">Est. 2024 &nbsp;|&nbsp; Jodhpur, Rajasthan</div>
   <h1>KALA FORCE</h1>
-  <div class="hero-sub">Student <span>Power</span> | Unity | Legacy</div>
-  <div class="hero-line"></div>
-  <div class="cube-scene">
-    <div class="cube">
-      <div class="face front">KFO</div><div class="face back">KFO</div>
-      <div class="face left"></div><div class="face right"></div>
-      <div class="face top"></div><div class="face bottom"></div>
-    </div>
-  </div>
+  <div class="hsub">Student <span>Power</span> | Unity | Legacy</div>
+  <div class="hln"></div>
+  <div class="cs"><div class="cb">
+    <div class="fc fn">KFO</div><div class="fc bk">KFO</div>
+    <div class="fc lf"></div><div class="fc rt"></div>
+    <div class="fc tp"></div><div class="fc bt"></div>
+  </div></div>
 </div>
 
-<div class="stats-row">
-  <div class="stat reveal"><span class="snum" data-target="20" data-suffix="+">0</span><span class="slbl">Members</span></div>
-  <div class="stat reveal"><span class="snum" data-target="1">0</span><span class="slbl">City</span></div>
-  <div class="stat reveal"><span class="snum" data-target="2024">0</span><span class="slbl">Founded</span></div>
-  <div class="stat reveal"><span class="snum" data-target="100">0</span><span class="slbl">% Commitment</span></div>
+<div class="sr">
+  <div class="si rv"><span class="sn" data-t="20" data-s="+">0</span><span class="sl">Members</span></div>
+  <div class="si rv"><span class="sn" data-t="1">0</span><span class="sl">City</span></div>
+  <div class="si rv"><span class="sn" data-t="2024">0</span><span class="sl">Founded</span></div>
+  <div class="si rv"><span class="sn" data-t="100">0</span><span class="sl">% Commitment</span></div>
 </div>
 
-<div class="section reveal" id="about">
-  <span class="sec-tag">Who We Are</span>
+<div class="sec rv" id="about">
+  <span class="stg">Who We Are</span>
   <h2>About KFO</h2>
-  <div class="sec-line"></div>
-  <p style="max-width:600px;margin:0 auto 40px;font-size:17px;color:var(--muted);line-height:1.8;">KFO is a student organization where students capture college memories, build unity, and grow together. We stand for discipline, brotherhood, and the spirit of student power.</p>
-  <div class="cards-grid">
-    <div class="card reveal"><div class="cd tl"></div><div class="cd br"></div><div class="card-icon">👑</div><h3>Founder</h3><p>Pawan Choudhary</p><p class="role-tag">Founder &amp; Visionary</p></div>
-    <div class="card reveal"><div class="cd tl"></div><div class="cd br"></div><div class="card-icon">⚡</div><h3>Head</h3><p>Karan Choudhary</p><p class="role-tag">Organizational Head</p></div>
-    <div class="card reveal"><div class="cd tl"></div><div class="cd br"></div><div class="card-icon">🛡️</div><h3>Secretary</h3><p>Ritesh Tolani<br>Naveen Rao</p><p class="role-tag">Core Secretaries</p></div>
-    <div class="card reveal"><div class="cd tl"></div><div class="cd br"></div><div class="card-icon">🌟</div><h3>Honorable Member</h3><p>Piyush Yadav</p><p class="role-tag">Distinguished Member</p></div>
+  <div class="sln"></div>
+  <p style="max-width:580px;margin:0 auto 36px;font-size:16px;color:var(--mt);line-height:1.8;">KFO is a student organization where students capture college memories, build unity, and grow together. We stand for discipline, brotherhood, and the spirit of student power.</p>
+  <div class="cg">
+    <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#128081;</div><h3>Founder</h3><p>Pawan Choudhary</p><p class="rt">Founder &amp; Visionary</p></div>
+    <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#9889;</div><h3>Co-Founder</h3><p>Piyush Yadav</p><p class="rt">Co-Founder</p></div>
+    <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#128737;</div><h3>Head</h3><p>Karan Choudhary</p><p class="rt">Organizational Head</p></div>
+    <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#128100;</div><h3>Secretary</h3><p>Ritesh Tolani<br>Naveen Rao</p><p class="rt">Core Secretaries</p></div>
   </div>
 </div>
 
-<div class="section reveal" id="join">
-  <span class="sec-tag">Become Part of Us</span>
+<div class="sec rv" id="join">
+  <span class="stg">Become Part of Us</span>
   <h2>How to Join</h2>
-  <div class="sec-line"></div>
-  <div class="join-box">
-    <div class="cd tl"></div><div class="cd br"></div>
-    <div class="join-item"><div class="join-num">01</div><div><h4>Apply</h4><p>Contact us via Instagram or Email and express your interest in joining KFO.</p></div></div>
-    <div class="join-item"><div class="join-num">02</div><div><h4>Physical Examination</h4><p>Clear the physical examination to prove your commitment and fitness.</p></div></div>
-    <div class="join-item"><div class="join-num">03</div><div><h4>Selection &amp; Reservation</h4><p>Reservation is available for SC, ST, and OBC categories as per norms.</p></div></div>
-    <div class="join-item"><div class="join-num">04</div><div><h4>Welcome to KFO</h4><p>Once selected, you are officially a part of the Kala Force family.</p></div></div>
+  <div class="sln"></div>
+  <div class="jb">
+    <div class="dc tl"></div><div class="dc br"></div>
+    <div class="ji"><div class="jn">01</div><div><h4>Apply</h4><p>Contact us via Instagram or Email and express your interest in joining KFO.</p></div></div>
+    <div class="ji"><div class="jn">02</div><div><h4>Physical Examination</h4><p>Clear the physical examination to prove your commitment and fitness.</p></div></div>
+    <div class="ji"><div class="jn">03</div><div><h4>Selection &amp; Reservation</h4><p>Reservation is available for SC, ST, and OBC categories as per norms.</p></div></div>
+    <div class="ji"><div class="jn">04</div><div><h4>Welcome to KFO</h4><p>Once selected, you are officially a part of the Kala Force family.</p></div></div>
   </div>
 </div>
 
-<div class="section reveal" id="contact">
-  <span class="sec-tag">Get in Touch</span>
+<div class="sec rv" id="contact">
+  <span class="stg">Get in Touch</span>
   <h2>Contact Us</h2>
-  <div class="sec-line"></div>
-  <div class="contact-grid">
-    <div class="ci"><span class="ci-lbl">Email</span><p>kala2006@gmail.com</p></div>
-    <div class="ci"><span class="ci-lbl">Mobile</span><p>888809999</p></div>
-    <div class="ci"><span class="ci-lbl">Location</span><p>Jodhpur, Rajasthan</p></div>
+  <div class="sln"></div>
+  <div class="ctg">
+    <div class="ct"><span class="ctl">Email</span><p>kala2006@gmail.com</p></div>
+    <div class="ct"><span class="ctl">Mobile</span><p>888809999</p></div>
+    <div class="ct"><span class="ctl">Location</span><p>Jodhpur, Rajasthan</p></div>
   </div>
-  <a class="btn" href="https://instagram.com/thekalaforceofficial__" target="_blank">⟶ &nbsp;Follow on Instagram</a>
+  <a class="btn" href="https://instagram.com/thekalaforceofficial__" target="_blank">&#10230; &nbsp;Follow on Instagram</a>
 </div>
 
-<footer><p>© 2026 &nbsp;<span>KFO</span>&nbsp; | Kala Force Organization &nbsp;|&nbsp; All Rights Reserved</p></footer>
+<footer><p>&#169; 2026 &nbsp;<span>KFO</span>&nbsp; | Kala Force Organization &nbsp;|&nbsp; All Rights Reserved</p></footer>
 
 </div></div>
 
 <script>
-const cvs=document.getElementById('bg'),ctx=cvs.getContext('2d'),wrap=document.querySelector('.page-wrapper');
-let W,H,pts=[],frame=0;
-function resize(){W=cvs.width=wrap.offsetWidth;H=cvs.height=Math.max(wrap.scrollHeight,window.innerHeight*3);}
-function initPts(){pts=[];for(let i=0;i<70;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.45,vy:(Math.random()-0.5)*0.45,r:Math.random()*1.4+0.4});}
-function drawHex(){const s=32;ctx.strokeStyle='rgba(225,48,108,0.04)';ctx.lineWidth=0.5;for(let r=0;r<=H/(s*1.73)+1;r++)for(let c=0;c<=W/(s*1.5)+1;c++){const cx=c*s*1.5,cy=r*s*1.73+(c%2===0?0:s*0.865);ctx.beginPath();for(let a=0;a<6;a++){const ag=(Math.PI/3)*a-Math.PI/6;const px=cx+s*Math.cos(ag),py=cy+s*Math.sin(ag);a===0?ctx.moveTo(px,py):ctx.lineTo(px,py);}ctx.closePath();ctx.stroke();}}
-function drawGrid(){const g=60;ctx.strokeStyle='rgba(0,240,255,0.04)';ctx.lineWidth=0.5;for(let x=0;x<=W;x+=g){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<=H;y+=g){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}}
-function drawCircuits(){ctx.strokeStyle='rgba(0,240,255,0.06)';ctx.lineWidth=1;const step=200;for(let i=0;i<6;i++){const x=((i*step)+frame*0.25)%W,y1=H*0.25,y2=H*0.55;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,y1);ctx.lineTo(x+45,y1);ctx.lineTo(x+45,y2);ctx.lineTo(x+90,y2);ctx.stroke();ctx.fillStyle='rgba(0,240,255,0.5)';ctx.beginPath();ctx.arc(x+45,y1,3,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(x+45,y2,3,0,Math.PI*2);ctx.fill();}}
-function drawPts(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.fillStyle='rgba(0,240,255,0.4)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.strokeStyle=`rgba(0,240,255,${0.12*(1-d/110)})`;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}}
-function drawScan(){const y=(Math.sin(frame*0.007)*0.5+0.5)*H,g=ctx.createLinearGradient(0,y-90,0,y+90);g.addColorStop(0,'transparent');g.addColorStop(0.5,'rgba(0,240,255,0.022)');g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.fillRect(0,y-90,W,180);}
-function loop(){const nh=Math.max(wrap.scrollHeight,window.innerHeight*3);if(Math.abs(nh-H)>50){H=cvs.height=nh;}ctx.clearRect(0,0,W,H);drawHex();drawGrid();drawScan();drawCircuits();drawPts();frame++;requestAnimationFrame(loop);}
-resize();initPts();loop();
-window.addEventListener('resize',()=>{resize();initPts();});
+const cv=document.getElementById('bgc'),cx=cv.getContext('2d'),wp=document.querySelector('.wrap');
+let W,H,pts=[],fr=0;
+function rsz(){W=cv.width=wp.offsetWidth;H=cv.height=Math.max(wp.scrollHeight,window.innerHeight*3);}
+function iPts(){pts=[];for(let i=0;i<65;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42,r:Math.random()*1.3+.4});}
+function dHex(){const s=30;cx.strokeStyle='rgba(225,48,108,0.04)';cx.lineWidth=.5;for(let r=0;r<=H/(s*1.73)+1;r++)for(let c=0;c<=W/(s*1.5)+1;c++){const px=c*s*1.5,py=r*s*1.73+(c%2?s*.865:0);cx.beginPath();for(let a=0;a<6;a++){const ag=(Math.PI/3)*a-Math.PI/6;a===0?cx.moveTo(px+s*Math.cos(ag),py+s*Math.sin(ag)):cx.lineTo(px+s*Math.cos(ag),py+s*Math.sin(ag));}cx.closePath();cx.stroke();}}
+function dGrid(){cx.strokeStyle='rgba(0,240,255,0.04)';cx.lineWidth=.5;for(let x=0;x<=W;x+=58){cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,H);cx.stroke();}for(let y=0;y<=H;y+=58){cx.beginPath();cx.moveTo(0,y);cx.lineTo(W,y);cx.stroke();}}
+function dCir(){cx.strokeStyle='rgba(0,240,255,0.06)';cx.lineWidth=1;for(let i=0;i<5;i++){const x=((i*190)+fr*.24)%W,y1=H*.28,y2=H*.58;cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,y1);cx.lineTo(x+42,y1);cx.lineTo(x+42,y2);cx.lineTo(x+84,y2);cx.stroke();cx.fillStyle='rgba(0,240,255,0.5)';cx.beginPath();cx.arc(x+42,y1,2.5,0,Math.PI*2);cx.fill();cx.beginPath();cx.arc(x+42,y2,2.5,0,Math.PI*2);cx.fill();}}
+function dPts(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;cx.fillStyle='rgba(0,240,255,0.38)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fill();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<105){cx.strokeStyle=`rgba(0,240,255,${.11*(1-d/105)})`;cx.lineWidth=.5;cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.stroke();}}}
+function dScn(){const y=(Math.sin(fr*.007)*.5+.5)*H,g=cx.createLinearGradient(0,y-85,0,y+85);g.addColorStop(0,'transparent');g.addColorStop(.5,'rgba(0,240,255,0.02)');g.addColorStop(1,'transparent');cx.fillStyle=g;cx.fillRect(0,y-85,W,170);}
+function loop(){const nh=Math.max(wp.scrollHeight,window.innerHeight*3);if(Math.abs(nh-H)>60)H=cv.height=nh;cx.clearRect(0,0,W,H);dHex();dGrid();dScn();dCir();dPts();fr++;requestAnimationFrame(loop);}
+rsz();iPts();loop();
+window.addEventListener('resize',()=>{rsz();iPts();});
 
-const revEls=document.querySelectorAll('.reveal');
-new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*70);});},{threshold:0.08}).observe||(r=>r.forEach(el=>el.classList.add('on')))(revEls);
-const ro=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*70);});},{threshold:0.08});
-revEls.forEach(el=>ro.observe(el));
+const ob=new IntersectionObserver(en=>{en.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*70);});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>ob.observe(el));
 
-function counter(el){const target=+el.dataset.target,suffix=el.dataset.suffix||'',dur=target>999?2400:1400,start=Date.now();(function tick(){const p=Math.min((Date.now()-start)/dur,1),ease=1-Math.pow(1-p,3);el.textContent=Math.round(ease*target)+suffix;if(p<1)requestAnimationFrame(tick);})();}
-const co=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){counter(e.target);co.unobserve(e.target);}});},{threshold:0.5});
-document.querySelectorAll('.snum').forEach(el=>co.observe(el));
+function cnt(el){const t=+el.dataset.t,s=el.dataset.s||'',d=t>999?2400:1400,st=Date.now();(function tk(){const p=Math.min((Date.now()-st)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t)+s;if(p<1)requestAnimationFrame(tk);})();}
+const co=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){cnt(e.target);co.unobserve(e.target);}});},{threshold:.5});
+document.querySelectorAll('.sn').forEach(el=>co.observe(el));
 </script>
 </body>
 </html>
