@@ -11,24 +11,25 @@ body {
     font-family: 'Segoe UI', sans-serif;
     color: white;
     overflow-x: hidden;
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+    background: linear-gradient(-45deg, #000000, #0f2027, #1a1a1a, #111);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 12s ease infinite;
 }
 
-/* 🌈 Background Animation */
+/* 🌈 Background */
 @keyframes gradient {
     0% { background-position: 0% }
     50% { background-position: 100% }
     100% { background-position: 0% }
 }
 
-/* 🌸 Flowers */
-.flower {
+/* 🏴 Floating V Animation */
+.vflag {
     position: fixed;
     top: -50px;
     font-size: 20px;
     animation: fall linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes fall {
@@ -39,7 +40,19 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    backdrop-filter: blur(10px);
+}
+
+/* 🔥 Text Transition */
+.header-text {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: glowText 3s infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #00f2ff; }
+    to { text-shadow: 0 0 25px #ff00ff; }
 }
 
 /* NAV */
@@ -67,23 +80,22 @@ nav a:hover {
 .hero {
     text-align: center;
     padding: 100px 20px;
-    animation: fadeIn 2s;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 48px;
     text-shadow: 0 0 20px #00f2ff;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
     padding: 60px 20px;
     text-align: center;
 }
 
-/* GLASS CARD */
+/* CARDS */
 .card {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
     border-radius: 15px;
     padding: 20px;
     margin: 15px auto;
@@ -94,18 +106,16 @@ nav a:hover {
 
 .card:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 25px #00f2ff;
+    box-shadow: 0 0 20px #00f2ff;
 }
 
 /* BUTTON */
 .btn {
     padding: 12px 30px;
     background: linear-gradient(45deg, #00f2ff, #ff00ff);
-    border: none;
     border-radius: 30px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .btn:hover {
@@ -118,31 +128,25 @@ footer {
     padding: 20px;
     background: rgba(0,0,0,0.7);
 }
-
-/* FADE */
-@keyframes fadeIn {
-    from {opacity:0}
-    to {opacity:1}
-}
 </style>
 </head>
 
 <body>
 
-<!-- 🌸 FLOWERS -->
+<!-- 🏴 V FLAG ANIMATION -->
 <script>
 for (let i = 0; i < 25; i++) {
-    let f = document.createElement("div");
-    f.className = "flower";
-    f.innerHTML = "🏴";
-    f.style.left = Math.random()*100 + "vw";
-    f.style.animationDuration = (5 + Math.random()*5) + "s";
-    document.body.appendChild(f);
+    let v = document.createElement("div");
+    v.className = "vflag";
+    v.innerHTML = "V🏴";
+    v.style.left = Math.random()*100 + "vw";
+    v.style.animationDuration = (5 + Math.random()*5) + "s";
+    document.body.appendChild(v);
 }
 </script>
 
 <header>
-<h2>KFO - Kala Force Organization</h2>
+<div class="header-text">KALA FORCE ORGANIZATION</div>
 </header>
 
 <nav>
@@ -154,13 +158,13 @@ for (let i = 0; i < 25; i++) {
 </nav>
 
 <div class="hero">
-<h1>KALA FORCE ORGANIZATION</h1>
-<p> Student Power | Unity | Memories </p>
+<h1>KFO</h1>
+<p>⚡ Student Power | Unity | Memories ⚡</p>
 </div>
 
 <div class="section" id="about">
 <h2>About KFO</h2>
-<p>KFO is a student organization capturing the best moments of college life.</p>
+<p>KFO is a student organization capturing the best college memories.</p>
 
 <div class="card">Founder<br>Pawan Choudhary</div>
 <div class="card">Head<br>Karan Choudhary</div>
@@ -187,7 +191,7 @@ Follow on Instagram
 </div>
 
 <footer>
-© 2026 KFO 
+© 2026 KFO 🚀
 </footer>
 
 </body>
