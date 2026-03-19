@@ -13,8 +13,6 @@ body{font-family:'Rajdhani',sans-serif;background:var(--dark);color:var(--tx);ov
 .wrap{position:relative;min-height:100vh;}
 #bgc{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
 .cnt{position:relative;z-index:2;}
-
-/* HEADER */
 header{display:flex;flex-direction:column;align-items:center;padding:26px 20px 14px;border-bottom:1px solid rgba(0,240,255,0.15);background:rgba(5,8,16,0.92);}
 .lw{position:relative;width:84px;height:84px;margin-bottom:10px;}
 .r1{position:absolute;inset:0;border-radius:50%;border:2px solid var(--cyan);box-shadow:0 0 16px var(--cg),inset 0 0 16px var(--cg);animation:sp 8s linear infinite;}
@@ -22,21 +20,12 @@ header{display:flex;flex-direction:column;align-items:center;padding:26px 20px 1
 .lc{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,#0d1530,#050810);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;color:var(--cyan);text-shadow:0 0 14px var(--cyan);}
 @keyframes sp{to{transform:rotate(360deg);}}
 header h2{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;}
-
-/* NAV */
 nav{display:flex;flex-wrap:wrap;justify-content:center;background:rgba(5,8,16,0.97);border-bottom:1px solid rgba(0,240,255,0.1);position:sticky;top:0;z-index:100;}
 nav a{color:var(--mt);text-decoration:none;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:2px;padding:13px 15px;text-transform:uppercase;position:relative;transition:color 0.3s;cursor:pointer;}
 nav a::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--red);transition:left 0.3s,right 0.3s;}
-nav a:hover{color:var(--cyan);}
-nav a:hover::after{left:8%;right:8%;}
-nav a.active-nav{color:var(--cyan);}
-nav a.active-nav::after{left:8%;right:8%;}
-
-/* PAGES */
-.pg{display:none;}
-.pg.active{display:block;}
-
-/* HERO */
+nav a:hover{color:var(--cyan);}nav a:hover::after{left:8%;right:8%;}
+nav a.active-nav{color:var(--cyan);}nav a.active-nav::after{left:8%;right:8%;}
+.pg{display:none;}.pg.active{display:block;}
 .hero{text-align:center;padding:90px 20px 70px;display:flex;flex-direction:column;align-items:center;}
 .hbdg{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:5px;color:var(--cyan);text-transform:uppercase;border:1px solid rgba(0,240,255,0.3);padding:5px 15px;border-radius:2px;margin-bottom:22px;animation:pb 3s ease infinite;}
 @keyframes pb{0%,100%{box-shadow:0 0 0 rgba(0,240,255,0);}50%{box-shadow:0 0 16px rgba(0,240,255,0.4);}}
@@ -53,20 +42,14 @@ nav a.active-nav::after{left:8%;right:8%;}
 .fc.fn{transform:translateZ(38px);}.fc.bk{transform:rotateY(180deg) translateZ(38px);}
 .fc.lf{transform:rotateY(-90deg) translateZ(38px);}.fc.rt{transform:rotateY(90deg) translateZ(38px);}
 .fc.tp{transform:rotateX(90deg) translateZ(38px);}.fc.bt{transform:rotateX(-90deg) translateZ(38px);}
-
-/* STATS ROW */
 .sr{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;padding:36px 20px;border-top:1px solid rgba(0,240,255,0.08);border-bottom:1px solid rgba(0,240,255,0.08);background:rgba(5,8,16,0.5);}
 .si{text-align:center;}
 .sn{font-family:'Orbitron',sans-serif;font-size:34px;font-weight:900;color:var(--cyan);text-shadow:0 0 18px var(--cg);display:block;}
 .sl{font-size:10px;letter-spacing:3px;color:var(--mt);text-transform:uppercase;}
-
-/* SECTION */
 .sec{padding:64px 20px;text-align:center;max-width:1060px;margin:0 auto;}
 .stag{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:5px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:10px;}
 .sec h2{font-family:'Orbitron',sans-serif;font-size:clamp(18px,4vw,32px);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
 .sln{width:52px;height:2px;background:linear-gradient(90deg,var(--red),var(--cyan));margin:0 auto 34px;}
-
-/* MEMBER CARDS */
 .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:15px;margin-top:14px;}
 .cd{background:var(--cb);border:1px solid rgba(0,240,255,0.13);border-radius:8px;padding:24px 16px;position:relative;overflow:hidden;transition:transform 0.4s,border-color 0.4s,box-shadow 0.4s;transform-style:preserve-3d;}
 .cd::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,240,255,0.06),transparent);transition:left 0.6s;}
@@ -79,8 +62,6 @@ nav a.active-nav::after{left:8%;right:8%;}
 .dc{position:absolute;width:28px;height:28px;}
 .dc.tl{top:8px;left:8px;border-top:1.5px solid var(--cyan);border-left:1.5px solid var(--cyan);}
 .dc.br{bottom:8px;right:8px;border-bottom:1.5px solid var(--cyan);border-right:1.5px solid var(--cyan);}
-
-/* JOIN BOX */
 .jb{background:var(--cb);border:1px solid rgba(225,48,108,0.2);border-radius:12px;padding:36px 26px;position:relative;overflow:hidden;text-align:left;max-width:640px;margin:0 auto;}
 .jb::before{content:'';position:absolute;top:-50px;right:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(225,48,108,0.12),transparent 70%);}
 .ji{display:flex;gap:15px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(0,240,255,0.07);}
@@ -88,21 +69,15 @@ nav a.active-nav::after{left:8%;right:8%;}
 .jn{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;color:var(--red);text-shadow:0 0 12px var(--rg);line-height:1;min-width:36px;}
 .ji h4{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:2px;color:var(--cyan);margin-bottom:5px;text-transform:uppercase;}
 .ji p{font-size:14px;color:var(--mt);}
-
-/* CONTACT */
 .ctg{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:11px;margin-bottom:24px;}
 .ct{background:var(--cb);border:1px solid rgba(0,240,255,0.11);border-radius:8px;padding:18px 14px;transition:border-color 0.3s;}
 .ct:hover{border-color:var(--cyan);}
 .ctl{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:3px;color:var(--red);text-transform:uppercase;display:block;margin-bottom:6px;}
 .ct p{font-size:14px;font-weight:600;}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:transparent;border:1px solid var(--red);color:var(--red);text-decoration:none;border-radius:4px;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;position:relative;overflow:hidden;transition:color 0.3s;cursor:pointer;}
 .btn::before{content:'';position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;z-index:-1;}
 .btn:hover{color:#fff;box-shadow:0 0 18px var(--rg);}
 .btn:hover::before{transform:scaleX(1);}
-
-/* ── PORTAL ── */
 .portal-pg{max-width:480px;margin:0 auto;padding:36px 20px;}
 .p-title{font-family:'Orbitron',sans-serif;font-size:19px;font-weight:900;letter-spacing:2px;text-align:center;margin-bottom:5px;background:linear-gradient(135deg,#fff 40%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .p-sub{text-align:center;font-size:11px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;margin-bottom:26px;}
@@ -120,8 +95,6 @@ nav a.active-nav::after{left:8%;right:8%;}
 .pbtn2:hover{background:rgba(0,240,255,0.1);border-color:var(--cyan);}
 .pdiv{text-align:center;margin:13px 0;color:var(--mt);font-size:11px;letter-spacing:3px;}
 .rg2{display:grid;grid-template-columns:1fr 1fr;gap:0 13px;}
-
-/* ID CARD */
 .id-wrap{max-width:440px;margin:0 auto;padding:28px 20px;}
 .id-card{background:linear-gradient(135deg,#0a0f1e,#050810,#0d1020);border:1px solid rgba(0,240,255,0.22);border-radius:13px;overflow:hidden;position:relative;margin-bottom:18px;}
 .id-card::before{content:'';position:absolute;top:-35px;right:-35px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(0,240,255,0.07),transparent 70%);}
@@ -157,45 +130,45 @@ nav a.active-nav::after{left:8%;right:8%;}
 .abtn:hover{background:rgba(0,240,255,0.07);border-color:var(--cyan);}
 .abtn.red{border-color:rgba(225,48,108,0.28);color:var(--red);}
 .abtn.red:hover{background:rgba(225,48,108,0.07);border-color:var(--red);}
-
-/* MEMBERS LIST */
 .mem-wrap{max-width:900px;margin:0 auto;padding:28px 20px;}
 .sec-bar{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;padding-bottom:9px;border-bottom:1px solid rgba(0,240,255,0.07);margin-bottom:15px;display:flex;justify-content:space-between;align-items:center;}
 .mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:11px;}
 .mc{background:var(--cb);border:1px solid rgba(0,240,255,0.11);border-radius:8px;padding:15px;transition:all 0.3s;}
-.mc:hover{border-color:rgba(0,240,255,0.38);box-shadow:0 6px 18px rgba(0,0,0,0.4);}
-.mc-av{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:900;color:var(--cyan);margin-bottom:8px;box-shadow:0 0 8px var(--cg);}
+.mc:hover{border-color:rgba(0,240,255,0.38);}
+.mc-av{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:900;color:var(--cyan);margin-bottom:8px;}
 .mc-name{font-size:14px;font-weight:700;color:var(--tx);}
 .mc-role{font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-top:3px;}
 .mc-id{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;color:var(--mt);margin-top:3px;}
-
-/* ── STUDY MATERIAL ── */
 .study-wrap{max-width:920px;margin:0 auto;padding:36px 20px;}
-.study-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:22px;}
-.stats-band{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
-.sb{background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.1);border-radius:8px;padding:11px 16px;flex:1;min-width:70px;}
+.study-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;}
+.stats-band{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:20px;}
+.sb{background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.1);border-radius:8px;padding:10px 15px;flex:1;min-width:70px;}
 .sb-n{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;color:var(--cyan);text-shadow:0 0 12px var(--cg);}
 .sb-l{font-size:9px;letter-spacing:2px;color:var(--mt);text-transform:uppercase;}
-.howto{background:rgba(0,240,255,0.03);border:1px solid rgba(0,240,255,0.09);border-radius:10px;padding:16px 18px;margin-bottom:20px;}
-.howto-t{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:3px;color:var(--cyan);margin-bottom:9px;text-transform:uppercase;}
-.howto ol{padding-left:18px;color:var(--mt);font-size:13px;line-height:2.1;}
+.knote{background:rgba(255,200,0,0.05);border:1px solid rgba(255,200,0,0.2);border-radius:9px;padding:14px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start;}
+.knote-icon{font-size:16px;flex-shrink:0;margin-top:2px;}
+.knote-t{font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:3px;color:#ffc800;text-transform:uppercase;margin-bottom:5px;}
+.knote-p{font-size:13px;color:var(--mt);line-height:1.7;}
+.knote-p span{color:#ffc800;}
+.howto{background:rgba(0,240,255,0.03);border:1px solid rgba(0,240,255,0.09);border-radius:9px;padding:14px 16px;margin-bottom:16px;}
+.howto-t{font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:3px;color:var(--cyan);margin-bottom:8px;text-transform:uppercase;}
+.howto ol{padding-left:16px;color:var(--mt);font-size:13px;line-height:2.1;}
 .howto ol span{color:var(--cyan);}
-.add-panel{background:var(--cb);border:1px solid rgba(0,240,255,0.14);border-radius:11px;padding:22px;margin-bottom:22px;display:none;}
+.add-panel{background:var(--cb);border:1px solid rgba(0,240,255,0.14);border-radius:11px;padding:22px;margin-bottom:20px;display:none;}
 .add-panel.open{display:block;}
-.panel-t{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:15px;padding-bottom:9px;border-bottom:1px solid rgba(0,240,255,0.07);}
+.panel-t{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(0,240,255,0.07);}
 .add-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 13px;}
-.pf select{width:100%;background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.2);border-radius:6px;padding:10px 13px;color:var(--tx);font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;outline:none;}
 .link-hint{font-size:12px;color:var(--mt);margin-top:5px;line-height:1.6;}
 .link-hint span{color:var(--cyan);}
-.sbar{width:100%;background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.18);border-radius:6px;padding:10px 13px;color:var(--tx);font-family:'Rajdhani',sans-serif;font-size:15px;outline:none;margin-bottom:15px;}
+.sbar{width:100%;background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.18);border-radius:6px;padding:10px 13px;color:var(--tx);font-family:'Rajdhani',sans-serif;font-size:15px;outline:none;margin-bottom:14px;}
 .sbar:focus{border-color:var(--cyan);}
 .sbar::placeholder{color:rgba(136,146,176,0.4);}
-.cat-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+.cat-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
 .cf{padding:5px 13px;border:1px solid rgba(0,240,255,0.18);border-radius:20px;font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:2px;color:var(--mt);cursor:pointer;transition:all 0.3s;text-transform:uppercase;}
 .cf:hover,.cf.on{border-color:var(--cyan);color:var(--cyan);background:rgba(0,240,255,0.06);}
-.mat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:13px;}
-.mat-card{background:var(--cb);border:1px solid rgba(0,240,255,0.11);border-radius:10px;padding:17px;position:relative;overflow:hidden;transition:all 0.3s;}
-.mat-card:hover{border-color:rgba(0,240,255,0.38);box-shadow:0 8px 22px rgba(0,0,0,0.4),0 0 10px var(--cg);}
+.mat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;}
+.mat-card{background:var(--cb);border:1px solid rgba(0,240,255,0.11);border-radius:10px;padding:16px;position:relative;overflow:hidden;transition:all 0.3s;}
+.mat-card:hover{border-color:rgba(0,240,255,0.38);box-shadow:0 8px 22px rgba(0,0,0,0.4);}
 .mat-card::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,240,255,0.05),transparent);transition:left 0.5s;}
 .mat-card:hover::before{left:150%;}
 .mat-badge{display:inline-block;padding:3px 9px;border-radius:3px;font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px;}
@@ -204,22 +177,18 @@ nav a.active-nav::after{left:8%;right:8%;}
 .mat-badge.video{background:rgba(99,153,34,0.14);color:#a0d44e;border:1px solid rgba(99,153,34,0.28);}
 .mat-badge.other{background:rgba(136,146,176,0.09);color:var(--mt);border:1px solid rgba(136,146,176,0.18);}
 .mat-title{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--tx);letter-spacing:1px;margin-bottom:5px;line-height:1.4;}
-.mat-subject{font-size:12px;color:var(--mt);margin-bottom:7px;}
-.mat-info{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;font-size:11px;color:var(--mt);}
+.mat-sub{font-size:12px;color:var(--mt);margin-bottom:7px;}
+.mat-info{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font-size:11px;color:var(--mt);}
 .mat-btns{display:flex;gap:7px;}
 .mbtn{flex:1;padding:8px;background:transparent;border:1px solid rgba(0,240,255,0.18);color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:all 0.3s;text-decoration:none;text-align:center;display:inline-block;}
 .mbtn:hover{background:rgba(0,240,255,0.07);border-color:var(--cyan);}
-.mbtn.red{border-color:rgba(225,48,108,0.28);color:var(--red);}
-.mbtn.red:hover{background:rgba(225,48,108,0.07);border-color:var(--red);}
+.mbtn.del{border-color:rgba(225,48,108,0.28);color:var(--red);flex:0;padding:8px 10px;background:transparent;font-family:'Orbitron',sans-serif;font-size:7px;border-radius:4px;cursor:pointer;transition:all 0.3s;}
+.mbtn.del:hover{background:rgba(225,48,108,0.07);border-color:var(--red);}
 .empty-state{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--mt);}
 .empty-icon{font-size:34px;margin-bottom:11px;}
 .empty-txt{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;}
-
-/* REVEAL */
 .rv{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .rv.on{opacity:1;transform:none;}
-
-/* FOOTER */
 footer{background:rgba(5,8,16,0.97);border-top:1px solid rgba(0,240,255,0.1);text-align:center;padding:22px 20px;}
 footer p{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:4px;color:var(--mt);text-transform:uppercase;}
 footer span{color:var(--red);}
@@ -230,13 +199,11 @@ footer span{color:var(--red);}
 <canvas id="bgc"></canvas>
 <div class="cnt">
 
-<!-- HEADER -->
 <header>
   <div class="lw"><div class="r1"></div><div class="r2"></div><div class="lc">KFO</div></div>
   <h2>Kala Force Organization</h2>
 </header>
 
-<!-- NAV -->
 <nav>
   <a onclick="gotoPage('home')" id="n-home" class="active-nav">Home</a>
   <a onclick="gotoPage('home','about')">About</a>
@@ -247,7 +214,7 @@ footer span{color:var(--red);}
   <a href="https://instagram.com/thekalaforceofficial__" target="_blank">Instagram</a>
 </nav>
 
-<!-- ═══════════ HOME PAGE ═══════════ -->
+<!-- HOME -->
 <div class="pg active" id="pg-home">
   <div class="hero">
     <div class="hbdg">Est. 2024 &nbsp;|&nbsp; Jodhpur, Rajasthan</div>
@@ -260,18 +227,14 @@ footer span{color:var(--red);}
       <div class="fc tp"></div><div class="fc bt"></div>
     </div></div>
   </div>
-
   <div class="sr">
     <div class="si rv"><span class="sn" data-t="20" data-s="+">0</span><span class="sl">Members</span></div>
     <div class="si rv"><span class="sn" data-t="1">0</span><span class="sl">City</span></div>
     <div class="si rv"><span class="sn" data-t="2024">0</span><span class="sl">Founded</span></div>
     <div class="si rv"><span class="sn" data-t="100">0</span><span class="sl">% Commitment</span></div>
   </div>
-
   <div class="sec rv" id="about">
-    <span class="stag">Who We Are</span>
-    <h2>About KFO</h2>
-    <div class="sln"></div>
+    <span class="stag">Who We Are</span><h2>About KFO</h2><div class="sln"></div>
     <p style="max-width:570px;margin:0 auto 34px;font-size:16px;color:var(--mt);line-height:1.8;">KFO is a student organization where students capture college memories, build unity, and grow together. We stand for discipline, brotherhood, and the spirit of student power.</p>
     <div class="cg">
       <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#128081;</div><h3>Founder</h3><p>Pawan Choudhary</p><p class="rt">Founder &amp; Visionary</p></div>
@@ -280,24 +243,18 @@ footer span{color:var(--red);}
       <div class="cd rv"><div class="dc tl"></div><div class="dc br"></div><div class="ci">&#128737;</div><h3>Secretary</h3><p>Ritesh Tolani<br>Naveen Rao</p><p class="rt">Core Secretaries</p></div>
     </div>
   </div>
-
   <div class="sec rv" id="join">
-    <span class="stag">Become Part of Us</span>
-    <h2>How to Join</h2>
-    <div class="sln"></div>
+    <span class="stag">Become Part of Us</span><h2>How to Join</h2><div class="sln"></div>
     <div class="jb">
       <div class="dc tl"></div><div class="dc br"></div>
       <div class="ji"><div class="jn">01</div><div><h4>Apply</h4><p>Contact us via Instagram or Email and express your interest in joining KFO.</p></div></div>
       <div class="ji"><div class="jn">02</div><div><h4>Physical Examination</h4><p>Clear the physical examination to prove your commitment and fitness.</p></div></div>
       <div class="ji"><div class="jn">03</div><div><h4>Selection &amp; Reservation</h4><p>Reservation available for SC, ST, OBC categories as per norms.</p></div></div>
-      <div class="ji"><div class="jn">04</div><div><h4>Welcome to KFO</h4><p>Once selected, you are officially part of the Kala Force family.</p></div></div>
+      <div class="ji"><div class="jn">04</div><div><h4>Welcome to KFO</h4><p>You are officially part of the Kala Force family.</p></div></div>
     </div>
   </div>
-
   <div class="sec rv" id="contact">
-    <span class="stag">Get in Touch</span>
-    <h2>Contact Us</h2>
-    <div class="sln"></div>
+    <span class="stag">Get in Touch</span><h2>Contact Us</h2><div class="sln"></div>
     <div class="ctg">
       <div class="ct"><span class="ctl">Email</span><p>kala2006@gmail.com</p></div>
       <div class="ct"><span class="ctl">Mobile</span><p>888809999</p></div>
@@ -307,32 +264,27 @@ footer span{color:var(--red);}
   </div>
 </div>
 
-<!-- ═══════════ PORTAL PAGE ═══════════ -->
+<!-- PORTAL -->
 <div class="pg" id="pg-portal">
-
-  <!-- Sign In -->
   <div class="pg active" id="ps-signin">
     <div class="portal-pg">
       <div style="height:18px;"></div>
       <div class="p-title">MEMBER LOGIN</div>
       <div class="p-sub">KFO Identity Portal</div>
-      <div class="perr" id="si-err">Invalid ID or password</div>
+      <div class="perr" id="si-err"></div>
       <div class="pf"><label>Member ID or Name</label><input type="text" id="si-id" placeholder="e.g. KFO001 or your name"></div>
       <div class="pf"><label>Password</label><input type="password" id="si-pw" placeholder="Enter your password"></div>
       <button class="pbtn" onclick="doSignIn()">&#10230; &nbsp;Sign In</button>
       <div class="pdiv">&#8212; or &#8212;</div>
       <button class="pbtn2" onclick="showPS('register')">Create New Member ID</button>
-      <div style="height:18px;"></div>
     </div>
   </div>
-
-  <!-- Register -->
   <div class="pg" id="ps-register">
     <div class="portal-pg">
       <div style="height:16px;"></div>
       <div class="p-title">CREATE ID</div>
       <div class="p-sub">New KFO Member Registration</div>
-      <div class="perr" id="reg-err">Please fill all fields</div>
+      <div class="perr" id="reg-err"></div>
       <div class="rg2">
         <div class="pf"><label>Full Name</label><input type="text" id="r-name" placeholder="Your full name"></div>
         <div class="pf"><label>Mobile</label><input type="text" id="r-mobile" placeholder="Mobile number"></div>
@@ -341,7 +293,7 @@ footer span{color:var(--red);}
         <div class="pf"><label>College</label><input type="text" id="r-college" placeholder="College name"></div>
         <div class="pf"><label>City</label><input type="text" id="r-city" placeholder="Your city"></div>
       </div>
-      <div class="pf"><label>Role / Position</label><input type="text" id="r-role" placeholder="e.g. Member, Volunteer"></div>
+      <div class="pf"><label>Role</label><input type="text" id="r-role" placeholder="e.g. Member, Volunteer"></div>
       <div class="rg2">
         <div class="pf"><label>Password</label><input type="password" id="r-pw" placeholder="Set password"></div>
         <div class="pf"><label>Confirm</label><input type="password" id="r-pw2" placeholder="Repeat password"></div>
@@ -349,28 +301,18 @@ footer span{color:var(--red);}
       <button class="pbtn" onclick="doRegister()">&#10230; &nbsp;Create Member ID</button>
       <div class="pdiv">&#8212; or &#8212;</div>
       <button class="pbtn2" onclick="showPS('signin')">Back to Sign In</button>
-      <div style="height:18px;"></div>
     </div>
   </div>
-
-  <!-- ID Card -->
   <div class="pg" id="ps-idcard">
     <div class="id-wrap">
       <div class="sec-bar"><span>Your KFO ID Card</span><button class="abtn" style="flex:0;padding:8px 12px;" onclick="loadMembers();showPS('members')">All Members</button></div>
       <div class="id-card">
         <div class="cdx tl"></div><div class="cdx tr"></div><div class="cdx bl"></div><div class="cdx br"></div>
-        <div class="id-hdr">
-          <div><div class="id-org">KFO</div><div class="id-org-s">Kala Force Organization</div></div>
-          <div class="id-bdg">Official ID</div>
-        </div>
+        <div class="id-hdr"><div><div class="id-org">KFO</div><div class="id-org-s">Kala Force Organization</div></div><div class="id-bdg">Official ID</div></div>
         <div class="id-body">
           <div class="id-avr">
             <div class="id-av" id="id-av">KF</div>
-            <div>
-              <div class="id-fn" id="id-fn">—</div>
-              <div class="id-rl" id="id-rl">—</div>
-              <div class="id-uid" id="id-uid">#KFO000</div>
-            </div>
+            <div><div class="id-fn" id="id-fn">—</div><div class="id-rl" id="id-rl">—</div><div class="id-uid" id="id-uid">#KFO000</div></div>
           </div>
           <div class="id-flds">
             <div class="idf"><div class="idf-l">College</div><div class="idf-v" id="id-cl">—</div></div>
@@ -380,32 +322,25 @@ footer span{color:var(--red);}
           </div>
           <div class="id-bc" id="id-bc"></div>
         </div>
-        <div class="id-ftr">
-          <div class="id-ftr-t">Jodhpur, Rajasthan</div>
-          <div class="id-act"><div class="dot"></div>Active Member</div>
-        </div>
+        <div class="id-ftr"><div class="id-ftr-t">Jodhpur, Rajasthan</div><div class="id-act"><div class="dot"></div>Active Member</div></div>
       </div>
       <div class="act-row">
-        <button class="abtn" onclick="loadMembers();showPS('members')">View All Members</button>
+        <button class="abtn" onclick="loadMembers();showPS('members')">All Members</button>
         <button class="abtn red" onclick="signOut()">Sign Out</button>
       </div>
     </div>
   </div>
-
-  <!-- Members -->
   <div class="pg" id="ps-members">
     <div class="mem-wrap">
       <div class="sec-bar"><span>KFO Member Directory</span><button class="abtn" style="flex:0;padding:8px 12px;" onclick="showPS('idcard')">My ID Card</button></div>
       <div class="mg" id="mem-grid"></div>
     </div>
   </div>
-
 </div>
 
-<!-- ═══════════ STUDY PAGE ═══════════ -->
+<!-- STUDY -->
 <div class="pg" id="pg-study">
   <div class="study-wrap">
-
     <div class="study-top">
       <div>
         <span class="stag" style="display:block;margin-bottom:8px;">KFO Knowledge Hub</span>
@@ -413,23 +348,27 @@ footer span{color:var(--red);}
       </div>
       <button class="pbtn" style="width:auto;padding:11px 22px;" onclick="toggleAddPanel()">+ Add Material</button>
     </div>
-
     <div class="stats-band">
       <div class="sb"><div class="sb-n" id="st-total">0</div><div class="sb-l">Total</div></div>
       <div class="sb"><div class="sb-n" id="st-pdf">0</div><div class="sb-l">PDFs</div></div>
       <div class="sb"><div class="sb-n" id="st-notes">0</div><div class="sb-l">Notes</div></div>
       <div class="sb"><div class="sb-n" id="st-video">0</div><div class="sb-l">Videos</div></div>
     </div>
-
-    <div class="howto" id="howto">
-      <div class="howto-t">How to add study material</div>
+    <div class="knote">
+      <div class="knote-icon">&#9432;</div>
+      <div>
+        <div class="knote-t">Note</div>
+        <div class="knote-p">This platform is currently developed as a <span>conceptual initiative</span> for KFO. Due to limited funding, a centralized data storage or server-based system is not available at this time.</div>
+      </div>
+    </div>
+    <div class="howto">
+      <div class="howto-t">How to add material</div>
       <ol>
-        <li>Upload your PDF to <span>Google Drive</span></li>
-        <li>Right-click file &#8594; <span>Share</span> &#8594; set to <span>"Anyone with the link"</span></li>
-        <li>Copy link and paste below, then click <span>Add Material</span></li>
+        <li>Upload PDF to <span>Google Drive</span></li>
+        <li>Right-click &#8594; <span>Share</span> &#8594; set <span>"Anyone with link"</span> &#8594; Copy link</li>
+        <li>Click <span>+ Add Material</span> above and paste the link</li>
       </ol>
     </div>
-
     <div class="add-panel" id="add-panel">
       <div class="panel-t">Add New Study Material</div>
       <div class="add-grid">
@@ -438,7 +377,7 @@ footer span{color:var(--red);}
       </div>
       <div class="add-grid">
         <div class="pf"><label>Category</label>
-          <select id="ap-cat">
+          <select id="ap-cat" style="width:100%;background:rgba(0,240,255,0.04);border:1px solid rgba(0,240,255,0.2);border-radius:6px;padding:10px 13px;color:var(--tx);font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;outline:none;">
             <option value="pdf">PDF</option>
             <option value="notes">Notes</option>
             <option value="video">Video</option>
@@ -452,15 +391,13 @@ footer span{color:var(--red);}
         <input type="url" id="ap-url" placeholder="https://drive.google.com/file/d/...">
         <div class="link-hint">Google Drive: Share &#8594; <span>Anyone with link can view</span> &#8594; Copy link</div>
       </div>
-      <div class="perr" id="ap-err" style="display:none;">Please fill all fields and add a valid link</div>
+      <div class="perr" id="ap-err" style="display:none;"></div>
       <div style="display:flex;gap:10px;margin-top:6px;">
-        <button class="pbtn" style="width:auto;flex:1;" onclick="doAddMaterial()">&#10230; &nbsp;Add Material</button>
+        <button class="pbtn" style="width:auto;flex:1;" onclick="doAddMaterial()">&#10230; &nbsp;Save Material</button>
         <button class="pbtn2" style="margin:0;flex:0;padding:11px 18px;" onclick="toggleAddPanel()">Cancel</button>
       </div>
     </div>
-
     <input class="sbar" type="text" id="mat-search" placeholder="Search title, subject or name..." oninput="renderMats()">
-
     <div class="cat-filters">
       <div class="cf on" onclick="setMatFilter('all',this)">All</div>
       <div class="cf" onclick="setMatFilter('pdf',this)">PDF</div>
@@ -468,67 +405,62 @@ footer span{color:var(--red);}
       <div class="cf" onclick="setMatFilter('video',this)">Video</div>
       <div class="cf" onclick="setMatFilter('other',this)">Other</div>
     </div>
-
     <div class="mat-grid" id="mat-grid"></div>
-
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer><p>&#169; 2026 &nbsp;<span>KFO</span>&nbsp; | Kala Force Organization &nbsp;|&nbsp; All Rights Reserved</p></footer>
-
 </div></div>
 
 <script>
-/* ── BG CANVAS ── */
+/* BG CANVAS */
 const cv=document.getElementById('bgc'),cx=cv.getContext('2d'),wp=document.querySelector('.wrap');
-let W,H,pts=[],fr=0;
+let W,H,pts=[],frame=0;
 function rsz(){W=cv.width=wp.offsetWidth;H=cv.height=Math.max(wp.scrollHeight,window.innerHeight*3);}
 function iPts(){pts=[];for(let i=0;i<65;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42,r:Math.random()*1.3+.4});}
 function dHex(){const s=30;cx.strokeStyle='rgba(225,48,108,0.04)';cx.lineWidth=.5;for(let r=0;r<=H/(s*1.73)+1;r++)for(let c=0;c<=W/(s*1.5)+1;c++){const px=c*s*1.5,py=r*s*1.73+(c%2?s*.865:0);cx.beginPath();for(let a=0;a<6;a++){const ag=(Math.PI/3)*a-Math.PI/6;a===0?cx.moveTo(px+s*Math.cos(ag),py+s*Math.sin(ag)):cx.lineTo(px+s*Math.cos(ag),py+s*Math.sin(ag));}cx.closePath();cx.stroke();}}
 function dGrid(){cx.strokeStyle='rgba(0,240,255,0.04)';cx.lineWidth=.5;for(let x=0;x<=W;x+=58){cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,H);cx.stroke();}for(let y=0;y<=H;y+=58){cx.beginPath();cx.moveTo(0,y);cx.lineTo(W,y);cx.stroke();}}
-function dCir(){cx.strokeStyle='rgba(0,240,255,0.06)';cx.lineWidth=1;for(let i=0;i<5;i++){const x=((i*190)+fr*.24)%W,y1=H*.28,y2=H*.58;cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,y1);cx.lineTo(x+42,y1);cx.lineTo(x+42,y2);cx.lineTo(x+84,y2);cx.stroke();cx.fillStyle='rgba(0,240,255,0.5)';cx.beginPath();cx.arc(x+42,y1,2.5,0,Math.PI*2);cx.fill();cx.beginPath();cx.arc(x+42,y2,2.5,0,Math.PI*2);cx.fill();}}
+function dCir(){cx.strokeStyle='rgba(0,240,255,0.06)';cx.lineWidth=1;for(let i=0;i<5;i++){const x=((i*190)+frame*.24)%W,y1=H*.28,y2=H*.58;cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,y1);cx.lineTo(x+42,y1);cx.lineTo(x+42,y2);cx.lineTo(x+84,y2);cx.stroke();cx.fillStyle='rgba(0,240,255,0.5)';cx.beginPath();cx.arc(x+42,y1,2.5,0,Math.PI*2);cx.fill();cx.beginPath();cx.arc(x+42,y2,2.5,0,Math.PI*2);cx.fill();}}
 function dPts(){pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;cx.fillStyle='rgba(0,240,255,0.38)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fill();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<105){cx.strokeStyle='rgba(0,240,255,'+(0.11*(1-d/105))+')';cx.lineWidth=.5;cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.stroke();}}}
-function dScn(){const y=(Math.sin(fr*.007)*.5+.5)*H,g=cx.createLinearGradient(0,y-85,0,y+85);g.addColorStop(0,'transparent');g.addColorStop(.5,'rgba(0,240,255,0.02)');g.addColorStop(1,'transparent');cx.fillStyle=g;cx.fillRect(0,y-85,W,170);}
-function loop(){const nh=Math.max(wp.scrollHeight,window.innerHeight*3);if(Math.abs(nh-H)>60)H=cv.height=nh;cx.clearRect(0,0,W,H);dHex();dGrid();dScn();dCir();dPts();fr++;requestAnimationFrame(loop);}
+function dScn(){const y=(Math.sin(frame*.007)*.5+.5)*H,g=cx.createLinearGradient(0,y-85,0,y+85);g.addColorStop(0,'transparent');g.addColorStop(.5,'rgba(0,240,255,0.02)');g.addColorStop(1,'transparent');cx.fillStyle=g;cx.fillRect(0,y-85,W,170);}
+function loop(){const nh=Math.max(wp.scrollHeight,window.innerHeight*3);if(Math.abs(nh-H)>60)H=cv.height=nh;cx.clearRect(0,0,W,H);dHex();dGrid();dScn();dCir();dPts();frame++;requestAnimationFrame(loop);}
 rsz();iPts();loop();
 window.addEventListener('resize',()=>{rsz();iPts();});
 
-/* ── REVEAL + COUNTERS ── */
+/* REVEAL + COUNTERS */
 const ob=new IntersectionObserver(en=>{en.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*70);});},{threshold:0.08});
 document.querySelectorAll('.rv').forEach(el=>ob.observe(el));
 function cnt(el){const t=+el.dataset.t,s=el.dataset.s||'',d=t>999?2400:1400,st=Date.now();(function tk(){const p=Math.min((Date.now()-st)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t)+s;if(p<1)requestAnimationFrame(tk);})();}
 const co=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){cnt(e.target);co.unobserve(e.target);}});},{threshold:.5});
 document.querySelectorAll('.sn').forEach(el=>co.observe(el));
 
-/* ── PAGE NAVIGATION ── */
-function gotoPage(pg, anchor){
+/* PAGE NAV */
+function gotoPage(pg,anchor){
   document.querySelectorAll('.pg[id^="pg-"]').forEach(p=>p.classList.remove('active'));
   document.getElementById('pg-'+pg).classList.add('active');
   document.querySelectorAll('nav a[id^="n-"]').forEach(a=>a.classList.remove('active-nav'));
-  const nav=document.getElementById('n-'+pg);
-  if(nav) nav.classList.add('active-nav');
+  const n=document.getElementById('n-'+pg);if(n)n.classList.add('active-nav');
   window.scrollTo({top:0,behavior:'smooth'});
-  if(anchor) setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'smooth'});},120);
-  if(pg==='study') renderMats();
+  if(anchor)setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'smooth'});},120);
+  if(pg==='study')renderMats();
 }
-
-/* ── PORTAL SCREENS ── */
 function showPS(sc){
   document.querySelectorAll('#pg-portal .pg').forEach(p=>p.classList.remove('active'));
   document.getElementById('ps-'+sc).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* ── MEMBER DATA ── */
-let members=[
+/* MEMBERS */
+const DEFAULT_MEMBERS=[
   {id:'KFO001',name:'Pawan Choudhary',role:'Founder',college:'Jodhpur University',city:'Jodhpur',mobile:'9880099001',pw:'kfo2024',joined:'Jan 2024'},
   {id:'KFO002',name:'Piyush Yadav',role:'Co-Founder',college:'Jodhpur University',city:'Jodhpur',mobile:'9880099002',pw:'kfo2024',joined:'Jan 2024'},
   {id:'KFO003',name:'Karan Choudhary',role:'Head',college:'Jodhpur College',city:'Jodhpur',mobile:'9880099003',pw:'kfo2024',joined:'Feb 2024'},
   {id:'KFO004',name:'Ritesh Tolani',role:'Secretary',college:'Jodhpur Institute',city:'Jodhpur',mobile:'9880099004',pw:'kfo2024',joined:'Feb 2024'},
   {id:'KFO005',name:'Naveen Rao',role:'Secretary',college:'Jodhpur Institute',city:'Jodhpur',mobile:'9880099005',pw:'kfo2024',joined:'Mar 2024'},
 ];
-let currentUser=null;
+function getMems(){try{const d=localStorage.getItem('kfo_members');return d?JSON.parse(d):[...DEFAULT_MEMBERS];}catch(e){return[...DEFAULT_MEMBERS];}}
+function saveMems(m){try{localStorage.setItem('kfo_members',JSON.stringify(m));}catch(e){}}
+let members=getMems(),currentUser=null;
 function initials(n){return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);}
 function nextId(){return 'KFO'+String(Math.max(...members.map(m=>parseInt(m.id.replace('KFO',''))))+1).padStart(3,'0');}
 
@@ -537,11 +469,9 @@ function doSignIn(){
   const pw=document.getElementById('si-pw').value;
   const err=document.getElementById('si-err');
   const m=members.find(x=>x.id.toLowerCase()===inp.toLowerCase()||x.name.toLowerCase()===inp.toLowerCase());
-  if(!m||m.pw!==pw){err.style.display='block';return;}
-  err.style.display='none';
-  currentUser=m; loadCard(m); showPS('idcard');
+  if(!m||m.pw!==pw){err.textContent='Invalid ID or password';err.style.display='block';return;}
+  err.style.display='none';currentUser=m;loadCard(m);showPS('idcard');
 }
-
 function doRegister(){
   const name=document.getElementById('r-name').value.trim();
   const mobile=document.getElementById('r-mobile').value.trim();
@@ -556,9 +486,8 @@ function doRegister(){
   err.style.display='none';
   const now=new Date();
   const m={id:nextId(),name,role,college,city,mobile,pw,joined:now.toLocaleString('default',{month:'short'})+' '+now.getFullYear()};
-  members.push(m); currentUser=m; loadCard(m); showPS('idcard');
+  members.push(m);saveMems(members);currentUser=m;loadCard(m);showPS('idcard');
 }
-
 function loadCard(m){
   document.getElementById('id-av').textContent=initials(m.name);
   document.getElementById('id-fn').textContent=m.name.toUpperCase();
@@ -569,12 +498,12 @@ function loadCard(m){
   document.getElementById('id-mo').textContent=m.mobile;
   document.getElementById('id-jo').textContent=m.joined;
   const bc=document.getElementById('id-bc');bc.innerHTML='';
-  [20,34,24,40,18,32,28,38,22,30,36,20,42,26,34,16,38,24,32,20,36,28,40,18,34,22,30,38,26,20].forEach(h=>{
+  [20,34,24,40,18,32,28,38,22,30,36,20,42,26,34,16,38,24,32,20,36,28,40,18,34].forEach(h=>{
     const b=document.createElement('div');b.className='bar';
     b.style.cssText='width:'+(Math.random()>.5?'3px':'2px')+';height:'+h+'px';bc.appendChild(b);});
 }
-
 function loadMembers(){
+  members=getMems();
   const g=document.getElementById('mem-grid');g.innerHTML='';
   members.forEach(m=>{
     const c=document.createElement('div');c.className='mc';
@@ -582,40 +511,32 @@ function loadMembers(){
     c.innerHTML='<div class="mc-av">'+initials(m.name)+'</div><div class="mc-name">'+m.name+'</div><div class="mc-role">'+m.role+'</div><div class="mc-id">'+m.id+'</div>';
     g.appendChild(c);});
 }
-
 function signOut(){
   currentUser=null;
   document.getElementById('si-id').value='';
   document.getElementById('si-pw').value='';
   showPS('signin');
 }
-
 document.getElementById('si-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doSignIn();});
-document.getElementById('si-id').addEventListener('keydown',e=>{if(e.key==='Enter')doSignIn();});
 
-/* ── STUDY MATERIAL ── */
-let materials=[
+/* STUDY MATERIAL */
+const DEFAULT_MATS=[
   {id:1,title:'Physics Mechanics - Complete Notes',subject:'Physics',cat:'notes',by:'Pawan Choudhary',date:'Jan 2025',url:'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUGdSuBWm/view'},
   {id:2,title:'Mathematics Formula Sheet',subject:'Maths',cat:'pdf',by:'Karan Choudhary',date:'Feb 2025',url:'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUGdSuBWm/view'},
-  {id:3,title:'Chemistry Organic Reactions',subject:'Chemistry',cat:'pdf',by:'Piyush Yadav',date:'Feb 2025',url:'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUGdSuBWm/view'},
-  {id:4,title:'English Grammar Handwritten Notes',subject:'English',cat:'notes',by:'Ritesh Tolani',date:'Mar 2025',url:'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUGdSuBWm/view'},
+  {id:3,title:'Chemistry Organic Reactions',subject:'Chemistry',cat:'pdf',by:'Piyush Yadav',date:'Mar 2025',url:'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUGdSuBWm/view'},
 ];
-let matFilter='all', matId=5;
+function getMats(){try{const d=localStorage.getItem('kfo_mats');return d?JSON.parse(d):[...DEFAULT_MATS];}catch(e){return[...DEFAULT_MATS];}}
+function saveMats(m){try{localStorage.setItem('kfo_mats',JSON.stringify(m));}catch(e){}}
+let materials=getMats(),matFilter='all',matId=100;
 
 function toggleAddPanel(){
   const p=document.getElementById('add-panel');
   p.classList.toggle('open');
-  document.getElementById('howto').style.display=p.classList.contains('open')?'none':'block';
   if(p.classList.contains('open'))p.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-
 function setMatFilter(cat,el){
-  matFilter=cat;
-  document.querySelectorAll('.cf').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  renderMats();
+  matFilter=cat;document.querySelectorAll('.cf').forEach(c=>c.classList.remove('on'));el.classList.add('on');renderMats();
 }
-
 function doAddMaterial(){
   const title=document.getElementById('ap-title').value.trim();
   const subject=document.getElementById('ap-subject').value.trim();
@@ -624,19 +545,21 @@ function doAddMaterial(){
   const url=document.getElementById('ap-url').value.trim();
   const err=document.getElementById('ap-err');
   if(!title||!subject||!by||!url){err.style.display='block';err.textContent='Please fill all fields and add a link';return;}
-  if(!url.startsWith('http')){err.style.display='block';err.textContent='Please enter a valid URL starting with https://';return;}
+  if(!url.startsWith('http')){err.style.display='block';err.textContent='Please enter a valid URL (https://...)';return;}
   err.style.display='none';
   const now=new Date();
   materials.unshift({id:matId++,title,subject,cat,by,date:now.toLocaleString('default',{month:'short'})+' '+now.getFullYear(),url});
-  document.getElementById('ap-title').value='';
-  document.getElementById('ap-subject').value='';
-  document.getElementById('ap-by').value='';
-  document.getElementById('ap-url').value='';
-  toggleAddPanel();
+  saveMats(materials);
+  ['ap-title','ap-subject','ap-by','ap-url'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('add-panel').classList.remove('open');
   renderMats();
 }
-
+function deleteMat(id){
+  if(!confirm('Delete this material?'))return;
+  materials=materials.filter(m=>m.id!==id);saveMats(materials);renderMats();
+}
 function renderMats(){
+  materials=getMats();
   const q=document.getElementById('mat-search').value.toLowerCase();
   const list=materials.filter(m=>(matFilter==='all'||m.cat===matFilter)&&(!q||m.title.toLowerCase().includes(q)||m.subject.toLowerCase().includes(q)||m.by.toLowerCase().includes(q)));
   document.getElementById('st-total').textContent=materials.length;
@@ -645,9 +568,8 @@ function renderMats(){
   document.getElementById('st-video').textContent=materials.filter(m=>m.cat==='video').length;
   const grid=document.getElementById('mat-grid');
   if(!list.length){grid.innerHTML='<div class="empty-state"><div class="empty-icon">&#128193;</div><div class="empty-txt">No materials found</div></div>';return;}
-  grid.innerHTML=list.map(m=>'<div class="mat-card"><div class="mat-badge '+m.cat+'">'+m.cat.toUpperCase()+'</div><div class="mat-title">'+m.title+'</div><div class="mat-subject">'+m.subject+'</div><div class="mat-info"><span>By '+m.by+'</span><span>'+m.date+'</span></div><div class="mat-btns"><a class="mbtn" href="'+m.url+'" target="_blank">&#128065; Open</a><a class="mbtn red" href="'+m.url+'" target="_blank">&#11015; Download</a></div></div>').join('');
+  grid.innerHTML=list.map(m=>'<div class="mat-card"><div class="mat-badge '+m.cat+'">'+m.cat.toUpperCase()+'</div><div class="mat-title">'+m.title+'</div><div class="mat-sub">'+m.subject+'</div><div class="mat-info"><span>By '+m.by+'</span><span>'+m.date+'</span></div><div class="mat-btns"><a class="mbtn" href="'+m.url+'" target="_blank">&#128065; Open</a><a class="mbtn" href="'+m.url+'" target="_blank">&#11015; Download</a><button class="mbtn del" onclick="deleteMat('+m.id+')">&#128465;</button></div></div>').join('');
 }
-
 renderMats();
 </script>
 </body>
